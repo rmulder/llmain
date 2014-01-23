@@ -1,0 +1,49 @@
+common:
+  base_url: http://www.likelist.com:82/
+  db_host: a.db.likelist.com
+  db_database: beta
+  db_username: root
+  db_password:
+  cacheify_redis_url: redis://192.168.100.50:6379/6
+  search_redis_host: 192.168.100.50
+  search_redis_port: 6379
+  search_redis_db: 5
+  server_time_zone: UTC
+  http_basic_username: aladmin
+  http_basic_password: alGO0#!71
+  solr_host: search
+  solr_port: 8081
+  image_file_path: /home/alikelist/live_server_files/photoimages/promoimages/
+  avatar_file_path: /var/www/html/alikeListBetaProd/images/beta2/business_avatars/
+  image_url: /files/photoimages/promoimages/
+  avatar_image_url: /images/beta2/business_avatars/
+  image_server: http://www.likelist.com
+  list_image_file_path: /home/alikelist/live_server_files/photoimages/listimages/
+  list_image_url: /files/photoimages/listimages/
+
+development:
+  # FOR CONSOLE / TESTING ONLY - JMB
+  fb_app_id: 118920981760
+  fb_app_secret: 5160fb57e6b1347aea73a14942f5d153
+  fb_api_key: aa0c0e0a556af9dad367c3a9aa773161
+  tw_consumer_key: k2iHRFuJaRNCqbRN9xffFg
+  tw_consumer_secret: taE09LwrGIU9li40KZFcLfo88ArdaGkb8d8tuUU9g7c
+  fs_consumer_key: DEFW3JHCKAZPP1UWA35QY2JIGJ4GDAL0IM4QSL2FJF1ZCFWE
+  fs_consumer_secret: LSMHXQISWHUSGYP52FV2ALANCU4EH5JIPSZMVXBWQZDHBOWO
+  li_consumer_key: ued8Sjv6I1rvzojYkld_SwNvM37-8b7HibbXKirSowxxE8vfsp-4HE5YEp2AK-_J
+  li_consumer_secret: aAV_fHjHtnQKqi5_kgKswQtl4OAe7cZg6HhHOqCj7ClLKNVhIIjOKkX2kvcL7chL
+  gw_consumer_key: 595e9b314c7a4510936ef52259102a8a
+  gw_consumer_secret: 1a6480fb941f478794c2a2efc976e313
+
+production:
+  fb_app_id: 118920981760
+  fb_app_secret: 5160fb57e6b1347aea73a14942f5d153
+  fb_api_key: aa0c0e0a556af9dad367c3a9aa773161
+  tw_consumer_key: k2iHRFuJaRNCqbRN9xffFg
+  tw_consumer_secret: taE09LwrGIU9li40KZFcLfo88ArdaGkb8d8tuUU9g7c
+  fs_consumer_key: 53DFGWDWAJVV34IX4LAQKW2VBBUTW1NRITVPOOJJWTCC0OMS
+  fs_consumer_secret: CXUWRQT5UVVM5FOXCHQHUPY0FZS3GQLPIOJCQXZTZHNSCVE2
+  li_consumer_key: ued8Sjv6I1rvzojYkld_SwNvM37-8b7HibbXKirSowxxE8vfsp-4HE5YEp2AK-_J
+  li_consumer_secret: aAV_fHjHtnQKqi5_kgKswQtl4OAe7cZg6HhHOqCj7ClLKNVhIIjOKkX2kvcL7chL
+  gw_consumer_key: 595e9b314c7a4510936ef52259102a8a
+  gw_consumer_secret: 1a6480fb941f478794c2a2efc976e313

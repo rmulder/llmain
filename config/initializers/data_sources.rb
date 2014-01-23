@@ -1,0 +1,9 @@
+class DataSource
+  LIKELIST = 0
+  RESTAURANT_COM = 1
+  MONEYMAILER = 2
+  BOSS = 3
+  VALPAK = 4
+  FACEBOOK = 5
+  FOURSQUARE = 6
+end

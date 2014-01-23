@@ -1,0 +1,42 @@
+common:
+  base_url: http://dev.likelist.com:83/
+  db_port: 3206
+  fb_app_id: 116610966862
+  fb_app_secret: 238dee6afd17b287eba220c319c4bb88
+  fb_api_key: 031e2495b6c6ac561ccca029f88bda37
+  tw_consumer_key: 5RiQwCGd1YTjknZnhILNQ
+  tw_consumer_secret: rLEOkB3JwLdPgwkmEwRspo9KgUHx7h6Q91yvw2OxM
+  fs_consumer_key: 43RVPAOKVUVD5NLIDVGVGB3QNL04SORCN3BEERDR3MSVFJLC
+  fs_consumer_secret: S33VKLIYETTH4FGCL01E3LF2AB3JQOI0XKJHS2SIML10L2AR
+  li_consumer_key: zXYXVNiJ1eoCllzxcTvq7AFEliJK9mgfAvP_THEo3CscGiUjS3xz8EDHlRSrbNd9
+  li_consumer_secret: kZcdVwdvguFemg7dUmR7UjAEMJbdpNoKr-Va97asF9ExzzRI8cmSkQnqSaCAG6up
+  gw_consumer_key: 3ea0e199ae5743da9336ad903bd4c169
+  gw_consumer_secret: 3eabf1268335490c9c3da08a24b7e7cf
+  
+  solr_host: localhost
+  solr_port: 11299
+
+  cacheify_redis_url: redis://dev.likelist.com:11211/5
+  
+  search_redis_host: dev.likelist.com
+  search_redis_port: 11211
+  search_redis_db: 5
+
+  image_file_path: /home/alikelist/codeline/alikelist/site/dev/files/photoimages/promoimages/
+  avatar_file_path: /home/alikelist/codeline/alikelist/site/dev/images/beta2/business_avatars/
+  image_url: /files/photoimages/promoimages/
+  avatar_image_url: /images/beta2/business_avatars/
+  list_image_file_path: /home/alikelist/codeline/alikelist/site/dev/files/photoimages/listimages/
+  list_image_url: /files/photoimages/listimages/
+
+development:
+  image_server: http://dev.likelist.com
+
+dev82:
+  image_server: http://dev.likelist.com:82
+
+test:
+  base_url: http://localhost:8008/
+
+production:
+  base_url: http://localhost:8008/

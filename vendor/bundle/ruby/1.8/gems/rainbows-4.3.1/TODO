@@ -1,0 +1,14 @@
+= TODO items for Rainbows!
+
+We're lazy and pick the easy items to do first, then the ones people
+care about.
+
+* investigate non-Rack frameworks (e.g. Goliath)
+
+* documentation improvements
+
+* Improve test suite coverage.  We won't waste cycles with puny
+  unit tests, only integration tests that exercise externally
+  visible parts.
+
+* test and improve performance (throughput/latency/memory usage)

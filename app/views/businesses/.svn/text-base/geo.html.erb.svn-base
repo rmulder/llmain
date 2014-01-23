@@ -1,0 +1,12 @@
+<% title "All Businesses in a region, by like count" %>
+
+<p>Businesses in the following zip codes <%= @zip_code_list%> </p>
+
+
+
+<% for biz in @details %>
+    <%= render :partial => 'business_details', :locals => {:business => biz} %>
+<% end %>
+<%= will_paginate @details %>
+
+

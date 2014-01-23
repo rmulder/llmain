@@ -1,0 +1,50 @@
+- content_for :unauth_right do
+  .al-lists-right-wrap
+    .al-lists-right
+      .promo-container.container
+        .promo-inner.column.span-9
+          .promo-inner-hd
+            %h3 Featured Deals
+            - 2.times do
+              .fake-deal.container
+                .fake-deal-title.column.span-7
+                  %p Miss Lilly's Cookies
+                .fake-deal-price.column.span-2
+                  %p $75
+                  .fake-deal-buy
+                    %p.rounded Buy Now
+                .fake-deal-boxes.column.span-2
+                  .fake-deal-box-1
+                    %p
+                      Worth:
+                      %em $99
+                  .fake-deal-box-2
+                    %p
+                      Discount:
+                      %em 50%
+                  .fake-deal-box-3
+                    %p
+                      Savings:
+                      %em $10
+                .fake-deal-photo.column.last.span-3
+      .two-list-wrap
+        - 1.times do
+          .two-list-container.container
+            .two-list-inner.column.span-9
+              .two-list-inner-hd
+                %h3 Featured Lists in Your Area
+              .two-list-inner-bd
+                - 5.times do
+                  .micro-profile-container.column.span-4.rounded
+                    .micro-profile
+                      .fake-avatar.rounded
+                      .micro-profile-right-text
+                        %p.micro-profile-title Running for Wellness in Mountain View
+                        %p.micro-profile-author by Evan Slater
+                        %p.micro-profile-stats
+                          %strong
+                            %em 325
+                          Likes in
+                          %strong
+                            %em 119
+                          Cities

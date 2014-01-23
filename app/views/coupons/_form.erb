@@ -1,0 +1,35 @@
+<%= form_for(@coupon) do |f| %>
+  <% if @coupon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@coupon.errors.count, "error") %> prohibited this coupon from being saved:</h2>
+
+      <ul>
+      <% @coupon.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.label :one_min_message %> <%= f.text_area :one_min_message %><br />
+    <%= f.label :description %> <%= f.text_area :description %><br />
+
+    <%= f.label :start_timestamp %> <%= f.datetime_select :start_timestamp %><br />
+    <%= f.label :end_timestamp %> <%= f.datetime_select :end_timestamp %><br />
+
+    <%= f.label :deal_start_timestamp %> <%= f.datetime_select :deal_start_timestamp %><br />
+    <%= f.label :deal_end_timestamp %> <%= f.datetime_select :deal_end_timestamp %><br />
+
+    <%= f.label :image_file_path %> <%= f.text_field :image_file_path %><br />
+
+    <%= f.label :purchase_price %> <%= f.text_field :purchase_price %><br />
+    <%= f.label :retail_value %> <%= f.text_field :retail_value %><br />
+
+    <%= f.label :max_quantity_per_person %> <%= f.text_field :max_quantity_per_person %><br />
+    <%= f.label :min_quantity_per_person %> <%= f.text_field :min_quantity_per_person %><br />
+    <%= f.label :max_quantity_provided %> <%= f.text_field :max_quantity_provided %><br />
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

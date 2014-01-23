@@ -1,0 +1,10 @@
+<%= @out[:qr_code] %>
+
+Title: <%= @out[:social_coupon]['one_min_message'] %><br />
+Description: <%= @out[:social_coupon]['description'] %><br />
+Coupon Terms: <%= @out[:social_coupon]['message_terms'] %><br />
+LL Terms: <%= @out[:social_coupon]['transaction_term_id'] %><br />
+Price: <%= @out[:social_coupon]['purchase_price'] %><br />
+Value: <%= @out[:social_coupon]['retail_value'] %><br />
+Start Time: <%= @out[:social_coupon]['start_timestamp'] %><br />
+End Time: <%= @out[:social_coupon]['end_timestamp'] %><br />

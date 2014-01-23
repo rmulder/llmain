@@ -1,0 +1,15 @@
+development:
+  access_key_id: AKIAIFDZVLFGAWC2PARA
+  secret_access_key: 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
+
+dev82:
+  access_key_id: AKIAIFDZVLFGAWC2PARA
+  secret_access_key: 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
+
+test:
+  access_key_id: AKIAIFDZVLFGAWC2PARA
+  secret_access_key: 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
+
+production:
+  access_key_id: AKIAIFDZVLFGAWC2PARA
+  secret_access_key: 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

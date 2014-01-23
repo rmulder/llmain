@@ -1,0 +1,22 @@
+<%= form_for(@transaction_term) do |f| %>
+  <% if @transaction_term.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction_term.errors.count, "error") %> prohibited this transaction_term from being saved:</h2>
+
+      <ul>
+      <% @transaction_term.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.label :terms %> <%= f.text_area :terms %><br />
+
+    <%= f.label :effective_start_date %> <%= f.date_select :effective_start_date %><br />
+    <%= f.label :effective_end_date %> <%= f.date_select :effective_end_date %><br />
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

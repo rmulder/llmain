@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lists</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :jquery, 'lib/jquery.tablesorter.min.js' %>
+  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag 'scaffold', 'tablesorter-blue' %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

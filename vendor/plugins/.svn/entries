@@ -1,0 +1,77 @@
+10
+
+dir
+41463
+svn+ssh://rmulder@svn.likelist.com/home/svn/repositories/alikelist/site2/main/vendor/plugins
+svn+ssh://rmulder@svn.likelist.com/home/svn/repositories/alikelist
+
+
+
+2011-03-06T23:38:48.198046Z
+24942
+jbennett
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+550f7992-f5cf-4a1f-b86d-b1b8690e5034
+
+auto_complete
+dir
+
+validates_absence_of
+dir
+
+app_config
+dir
+
+default_value_for
+dir
+
+.gitkeep
+file
+
+
+
+
+2012-07-10T00:22:59.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2010-11-03T18:29:48.091994Z
+20200
+jbennett
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+in_place_editing
+dir
+

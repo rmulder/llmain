@@ -1,0 +1,36 @@
+<h1>Listing user purchases</h1>
+
+<table border="1">
+  <tr>
+    <th>User</th>
+    <th>Status</th>
+    <th>Coupon(s)</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_purchases.each do |user_purchase| %>
+  <tr>
+    <td><%= user_purchase[:user]['first_name'] %> <%= user_purchase[:user]['last_name'] %></td>
+    <td><%= user_purchase[:user_purchase]['purchase_status'] %> </td>
+    <td>
+      <% user_purchase[:coupons].each do |coupon| puts coupon.to_json %>
+        <table>
+          <tr>
+            <td><%= coupon[:business]['business_name'] %></td>
+            <td><%= coupon[:social_coupon]['description'].truncate(50) %></td>
+            <td><%= coupon[:coupon]['created_at'] %></td>
+            <td><%= link_to 'Show', '/coupons/' + coupon[:coupon]['coupon_unique_number'].to_s %></td>
+          </tr>
+        </table>
+      <% end %>
+    </td>
+    <td><%= link_to 'Show', '/user_purchases/' + user_purchase[:user_purchase]['id'].to_s %></td>
+    <td><%= user_purchase[:user_purchase]['purchase_status'] == 'paid' ? (link_to 'Refund Purchase', '/user_purchases/' + user_purchase[:user_purchase]['id'].to_s + '/refund') : '' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', '/social_coupons' %>

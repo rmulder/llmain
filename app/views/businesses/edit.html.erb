@@ -1,0 +1,51 @@
+<h1>
+  <%= image_tag "#{AppConf.image_server}#{AppConf.image_url}#{AppConf.image_path_square100}#{@business.default_image_file_path}", :id => "default_img" %>
+  
+  <%= @business.business_name %>
+</h1>
+
+<%= in_place_editor_field :business, "website"%>
+
+<script language="JavaScript">
+
+
+</script>
+
+<div id="img_block">
+  <p>Upload an image</p>
+  <% form_tag({:controller=>'images', :action => 'image_upload'},
+               :multipart => true) do %>
+      <%= hidden_field_tag "id", "#{@business.business_id}" %>
+      <p><label for="upload_file">Select File</label> :
+        <%= file_field 'upload', 'datafile' %></p>
+      <%= submit_tag "Upload" %>
+  <% end %>
+</div>
+
+<div id="img_block">
+
+  <p>Google images for  <%= @business.business_name %> </p>
+
+  <% @business.google_images.each do |image| %>
+      <a href=<%= image_download_images_url(:id=>@business.business_id, :image=>image) %>>
+        <img id="thumbnail" src=<%= "'#{image}'" %>/>
+      </a>
+  <% end %>
+
+</div>
+
+<div id="img_block">
+
+  <p>images from company website (<a target=_blank href="<%= @business.canonicalized_website %>"><%= @business.website %></a>)</p>
+
+  <% @business.images.each do |image| %>
+      <a href=<%= image_download_images_url(:id=>@business.business_id, :image=>image) %>>
+        <img id="thumbnail" src=<%= "'#{image}'" %>/>
+      </a>
+  <% end %>
+
+</div>
+
+<p>
+  <%= link_to "View All", '/businesses/dashboard' %>
+</p>

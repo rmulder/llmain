@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+terms: <%= @transaction_term.terms %><br />
+
+effective_start_date: <%= @transaction_term.effective_start_date %><br />
+effective_end_date: <%= @transaction_term.effective_end_date %><br />
+
+<%= link_to 'Edit', edit_transaction_term_path(@transaction_term) %> |
+<%= link_to 'Back', transaction_terms_index_path %>

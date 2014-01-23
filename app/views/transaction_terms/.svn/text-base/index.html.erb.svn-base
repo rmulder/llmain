@@ -1,0 +1,28 @@
+<h1>Listing transaction_terms</h1>
+
+<table>
+  <tr>
+    <th>Terms</th>
+    <th>effective date</th>
+    <th>end date</th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transaction_terms.each do |transaction_term| %>
+  <tr>
+    <td><%= transaction_term.terms %></td>
+    <td><%= transaction_term.effective_start_date %></td>
+    <td><%= transaction_term.effective_end_date %></td>
+    <td><%= link_to 'Show', transaction_term %></td>
+    <td><%= link_to 'Edit', edit_transaction_term_path(transaction_term) %></td>
+    <td><%= link_to 'Destroy', transaction_term, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transaction terms', new_transaction_term_path %>

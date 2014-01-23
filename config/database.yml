@@ -1,0 +1,24 @@
+# if you need your own local DB settings, create a config.local.yml file and DO NOT check it into SVN
+
+development: &defaults
+  adapter: <%= AppConf.db_adapter %>
+  encoding: <%= AppConf.db_encoding %>
+  reconnect: <%= AppConf.db_reconnect %>
+  host: <%= AppConf.db_host %>
+  port: <%= AppConf.db_port %>
+  database: <%= AppConf.db_database %>
+  pool: <%= AppConf.db_pool %>
+  username: <%= AppConf.db_username %>
+  password: <%= AppConf.db_password %>
+
+dev82:
+  <<: *defaults
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -1,0 +1,58 @@
+.h-top-bar
+  .inn.container_16.clearfix
+    %a#h_logo{:href => "/"}>
+      %img{:height => "42", :src => "/images/demo/h_logo.png", :width => "99"}/
+    #site-data
+      %ul.clearfix
+        %li
+          %span.number 184
+          %br/
+          %span.text Lists referring
+        %li
+          %span.number 1,932
+          %br/
+          %span.text Liked businesses in
+        %li
+          %span.number 5,650
+          %br/
+          %span.text Cities around the country
+    #user_type_tabs.clearfix
+    - if user_signed_in?
+      #user_status_box
+        = link_to current_user.first_name.empty? ? current_user.email : current_user.first_name ,"/"
+        \&nbsp;&nbsp;|&nbsp
+        \#{link_to "Sign out", destroy_user_session_path}
+    - else
+      #top_links
+        %a#header_login.btn_signin> Sign in
+        \&nbsp;&nbsp;|&nbsp
+        %a#loadJoin.btn_head_join Join Likelist
+#marketing-banner-carousel
+  %ul
+    %li
+      %img.banner{:width => 960,:height => 370,:src => "/images/demo/marketing_screen-01.png", :alt => "LikeList is for me"}
+    %li
+      %img.banner{:width => 960,:height => 370,:src => "/images/demo/marketing_screen-02.png", :alt => "LikeList is for me"}
+    %li
+      %img.banner{:width => 960,:height => 370,:src => "/images/demo/marketing_screen-03.png", :alt => "LikeList is for me"}
+    %li
+      %img.banner{:width => 960,:height => 370,:src => "/images/demo/marketing_screen-04.png", :alt => "LikeList is for me"}
+  .jcarousel-control
+    %ul
+      %li.opaque
+        %a{:id => '1'}
+          Discover
+        %p the best local spots
+      %li.opaque
+        %a{:id => '2'}
+          Save
+        %p Your list of favorites
+      %li.opaque
+        %a{:id => '3'}
+          Get Deals
+        %p to spots you already like
+      %li.opaque
+        %a{:id => '4'}
+          Share
+        %p with friends and family
+=# render :partial => 'consumers/layouts/tabnav_header'

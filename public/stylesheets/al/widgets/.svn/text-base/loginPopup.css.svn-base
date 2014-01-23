@@ -1,0 +1,316 @@
+/**
+ * Login Popup
+ */
+#login-popup-container .error {
+	display: block;
+	float: none;
+}
+#login-popup-container {
+	z-index: 500;
+}
+#login-popup-form-signin, #login-popup-form-forgotpassword{
+	margin:10px 0;
+}
+
+#login-popup-form-signin label, #login-popup-form-forgotpassword label{
+	margin:10px 0;
+	display:block;
+}
+
+#login-popup-form-signin label label.error{
+	margin:5px 0;
+}
+
+#login-popup-username, #login-popup-password, #login-popup-forgotpassword-email{
+	display:block;
+	width:256px;
+	margin:3px 0;
+}
+
+/** login popup, sign in css */
+#login-popup-form-signin label[for=login-popup-remember-me]{
+	margin-bottom:5px;
+}
+#login-popup-form-signin label[for=login-popup-auto-login]{
+	margin-top:5px;
+}
+
+#login-popup-prompt-container {
+	margin: 0;
+}
+
+#login-popup-container-wrapper .loading_gif_signin {
+	float: right;
+}
+#login-popup-signIn-with-facebook {
+	text-align: center;
+}
+#banner_facebook_signin_inner {
+	width: 240px;
+	margin: 15px;
+	cursor: pointer;
+}
+#login-popup-signin-content {
+	height: 290px;
+}
+#loginContayner {
+	position:relative;
+	float:left;
+	width:320px;
+	height:250px;
+	margin-left:20px;
+}
+h2.login-popup-content-title {
+	margin: 10px 0pt 15px;
+	font-weight: normal;
+        font-size: 24px;
+}
+
+div.loginTxtOne{
+	margin: 0pt;
+	width: 260px;
+	font-size: 14px;
+	color: #666;
+}
+div.floatFix {
+	margin-top: 10px;
+}
+input#login-popup-username, input#login-popup-password {
+	padding: 5px;
+	color: #666;
+	height: 20px;
+	line-height: 20px;
+}
+a#login-popup-forgot-link {
+	font-weight: bold;
+	font-size: 12px;
+}
+label.loginPopAuto {
+	font-weight: bold;
+	font-size: 12px;
+}
+label.loginPopAuto a {
+	font-weight: normal;
+	font-size: 11px;
+}
+a#login-popup-signin-button{
+	padding: 7px 20px 10px;
+	position: relative;
+	font-size: 18px;
+	background: #fb9459 none repeat scroll 0 0;
+}
+a:hover#login-popup-signin-button,
+#joinSubmit a:hover {
+	background: #fd9f30 none repeat scroll 0 0;
+	text-decoration:none;
+}
+p.loginTxtTwo {
+	width: 260px;
+	font-size: 18px;
+	color: #666;
+}
+div.loginSeparytr {
+	overflow: hidden;
+	position: relative;
+	float: left;
+	width: 3px;
+	height: 260px;
+	background-color: rgb(245, 249, 254);
+	margin-top: 14px;
+}
+div.loginRyte {
+	position: relative;
+	float: left;
+	width: 280px;
+	height: 250px;
+}
+div.loginRyte p {
+	margin: 40px 0pt 0pt 50px;
+	width: 250px;
+	font-size: 14px;
+	color: #666;
+}
+div.loginRyte p span {
+	font-size: 24px;
+}
+div.loginRyte p img {
+	 margin: 10px 0px;
+}
+#banner_facebook_signin {
+	cursor: pointer;
+}
+
+/* Join Popup styles */
+.joinPopupLine{
+    margin-right: 29px;
+}
+
+#joinContayner {
+	position:relative;
+	float:left;
+	width:320px;
+	height:auto;
+	margin-left:20px;
+}
+
+div.joinTxtOne{
+	margin: 0pt;
+	width: 280px;
+	font-size: 14px; 
+	color: #666;
+}
+div.floatFix {
+	margin-top: 10px;
+}
+div#join-popup-linked-signIn {
+	width:320px;
+}
+
+input[type="password"],
+input#joinUserName,
+input#joinEmail,
+input#joinPasswordEntry,
+input#joinPasswordRepeat,
+input#joinLocation,
+input#joinCityState { 
+	display: inline-block;
+	padding: 5px  !important;
+	color: #666;
+	height: 20px !important;
+	line-height: 20px !important;
+	width:280px;
+	margin:5px 0 0;
+}
+input#joinLocation  {
+	margin-top: 15px;
+}
+#city_state_popup{
+        margin: 5px 29px 0 0;
+        text-align:right;
+        position: relative;
+}
+input#joinEmail {
+        margin:20px 0 5px 0;
+	display:inline-block !important;
+}
+input#joinPasswordEntry {
+        margin: 15px 0 5px 0;
+}
+
+input#joinZip,
+input#joinCityState {
+        margin-top: 10px;
+}
+#zipCity_tooltip {
+    
+    left:303px;
+    top:-20px;
+}
+#join_popup_zipcity_carrot{
+    background: transparent url(/images/beta2/main_sprite.png) no-repeat scroll -311px -195px;
+    position: absolute;
+    top: 20px;
+    left: -9px;
+    height: 16px;
+    width: 10px;
+
+}
+
+a#join-popup-forgot-link {
+	font-weight: bold;
+	font-size: 12px;
+}
+div.joinTwoFields {
+	margin: 0 10px 0 0;
+	position: relative;
+	float: left; 
+}
+div.floatFix {
+	clear:both;
+}
+label.joinPopAuto {
+	font-weight: bold;
+	font-size: 12px;
+}
+label.joinPopAuto a {
+	font-weight: normal;
+	font-size: 11px;
+}
+div.privacy_terms_info {
+        float: left;
+        width: 220px;
+}
+#joinSubmit{
+    float:right;
+}
+#joinSubmit a {
+	font-size: 18px;
+	background: #fb9459 none repeat scroll 0 0;
+}
+.joinSignupLine{
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+a#join-popup-signin-button {
+	padding: 7px 20px 10px;
+	position: relative;
+	font-size: 18px;
+}
+p.joinTxtTwo {
+	width: 270px;
+	font-size: 18px;
+	color: #666;
+	margin:10px 0;
+}
+#join-popup-signin-content .hint{
+	text-indent:5px;
+}
+label[for="joinFirstName"] .error,
+label[for="joinLastName"] .error,
+label[for="joinZip"] .error,
+label[for="joinCityState"] .error {
+    padding-left: 5px;
+    width: 125px;
+}
+div.joinSeparytr {
+	overflow: hidden;
+	float: left;
+	width: 3px;
+	height: 340px;
+	background-color: rgb(245, 249, 254);
+	margin-top: 14px;
+        margin-left: 20px;
+        display: inline;
+}
+div.joinRyte {
+	float: left;
+	width: 280px;
+	height: 250px;
+}
+
+div.joinRyte p {
+	margin: 90px 0 0 20px;
+	width: 250px;
+	font-size: 18px;
+	color: #000;
+}
+div.joinRyte p span {
+        font-weight: bold;
+}
+div.joinRyte p img {
+        margin: 10px 20px;
+}
+
+
+/* for demo */
+
+ul.hmenu {
+  list-style: none;
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+ul.hmenu li {
+  display: inline;
+}

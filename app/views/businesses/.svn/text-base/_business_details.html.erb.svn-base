@@ -1,0 +1,17 @@
+<tr>
+  <div class="business_listing">
+
+      <a href="<%="/businesses/#{business.business_id}/edit"%>">
+        <%if business.default_image_file_path.present? %>
+          <%= image_tag "#{AppConf.image_server}#{AppConf.image_url}#{AppConf.image_path_square100}#{business.default_image_file_path}", :class=>"photo" %>
+        <% else %>
+          <div class="photo">NO IMAGE</div>
+        <% end %>
+      </a>
+      <p><a target="_blank" href="<%="#{AppConf.image_server}/business/business-#{business.business_id}"%>"><%= h business.business_name %></a> </p>
+    <p><%= h business.like_count %> likes</p>
+      <% @business = business %>
+      <p><%= in_place_editor_field :business, "website" %></p>
+    </div>
+
+</tr>

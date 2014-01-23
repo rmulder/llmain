@@ -1,0 +1,40 @@
+- content_for :auth_right do
+  .user-panel-container
+    .fake-avatar.rounded
+    .avatar-right-text
+      %h3 Jessica Russel
+      %p.mini-profile-small-text
+        Edit Photo
+        %br/
+        Account Settings
+    .user-stats
+      #site-data
+        %ul.clearfix
+          %li
+            %span.number 10
+            %br/
+            %span.text LikeLists
+          %li
+            %span.text referring
+          %li
+            %span.number 500
+            %br/
+            %span.text Businesses
+          %li
+            %span.text in
+          %li
+            %span.number 223
+            %br/
+            %span.text Cities
+  .small-list-wrap
+    - 3.times do
+      .small-list-container
+        .small-list-inner
+          .small-list-inner-hd
+            %h2 My List Text
+          .small-list-inner-bd
+            - 6.times do
+              .avatar-with-below-text
+                .fake-avatar.rounded
+                .avatar-below-text
+                  %p Favorite Bay Area Audio and Video Stores

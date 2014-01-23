@@ -1,0 +1,75 @@
+<!-- <%= @social_coupon.to_json %> -->
+
+Title: <%= @social_coupon.one_min_message %><br />
+Description: <%= @social_coupon.description %><br />
+Coupon Terms: <%= @social_coupon.message_terms %><br />
+LL Terms: <%= @social_coupon.transaction_term_id %><br />
+Price: <%= @social_coupon.purchase_price %><br />
+Value: <%= @social_coupon.retail_value %><br />
+Start Time: <%= @social_coupon.start_timestamp %><br />
+End Time: <%= @social_coupon.end_timestamp %><br />
+Max Per Person: <%= @social_coupon.max_quantity_per_person %><br />
+Min Per Person: <%= @social_coupon.min_quantity_per_person %><br />
+Max Available: <%= @social_coupon.max_quantity_provided %><br />
+<iframe border="0" src="/social_coupons/<%= @social_coupon.id.to_s%>/check_status"></iframe><br />
+
+<div id="coupon_data"></div>
+<script type="text/javascript">
+    /*new Ajax.PeriodicalUpdater('coupon_data', '/social_coupons/<%= @social_coupon.id.to_s%>/check_status',
+      {
+        method: 'get',
+        insertion: Insertion.Replace,
+        frequency: 1,
+        decay: 2
+      });*/
+</script>
+<%= form_for :user_purchases, @coupon, :url => "/user_purchases/#{@social_coupon.id.to_s}/purchase", :html => {:target => 'payment_iframe'}, :id => 'purchase_form' do |f| %>
+    User ID - <input type="text" id="user_id" name="user_purchase[user_id]" value="<%= @user_id %>" /><br />
+    <input type="hidden" id="message_id" name="user_purchase[message_id]" value="<%= @social_coupon.id.to_s %>" />
+    <input type="hidden" id="success_callback" name="success_callback" value="test" />
+    <input type="hidden" id="ipn_callback" name="ipn_callback" value="test" />
+    <input type="hidden" id="cancel_callback" name="cancel_callback" value="test" />
+    Quantity - <input type="text" id="qty" name="user_purchase[qty]" value="1" /><br /><br />
+    buyer email address - <input type="text" id="buyer_email" name="user_purchase[buyer_email]" value="" /><br /><br />
+
+    Me - <input type="radio" id="gift_flag_0_me" name="user_purchase[coupons_attributes[0]gift_flag]" value="0" checked="checked" />&nbsp;
+    Gift - <input type="radio" id="gift_flag_0_gift" name="user_purchase[coupons_attributes[0]gift_flag]" value="1" /><br />
+    First and Last Name - <input type="text" id="first_name_0" name="user_purchase[coupons_attributes[0]first_name]" value="" />
+    <input type="text" id="last_name_0" name="user_purchase[coupons_attributes[0]last_name]" value="" /><br />
+    Email - <input type="text" id="email_address_0" name="user_purchase[coupons_attributes[0]email_address]" value="" /><br />
+    Gift Note - <input type="text" id="gift_text_0" name="user_purchase[coupons_attributes[0]gift_text]" value="" /><hr width="300" align="left" />
+
+    Me - <input type="radio" id="gift_flag_1_me" name="user_purchase[coupons_attributes[1]gift_flag]" value="0" checked="checked" />&nbsp;
+    Gift - <input type="radio" id="gift_flag_1_gift" name="user_purchase[coupons_attributes[1]gift_flag]" value="1" /><br />
+    First and Last Name - <input type="text" id="first_name_1" name="user_purchase[coupons_attributes[1]first_name]" value="" />
+    <input type="text" id="last_name_1" name="user_purchase[coupons_attributes[1]last_name]" value="" /><br />
+    Email - <input type="text" id="email_address_1" name="user_purchase[coupons_attributes[1]email_address]" value="" /><br />
+    Gift Note - <input type="text" id="gift_text_1" name="user_purchase[coupons_attributes[1]gift_text]" value="" /><hr width="300" align="left" />
+
+    Me - <input type="radio" id="gift_flag_2_me" name="user_purchase[coupons_attributes[2]gift_flag]" value="0" checked="checked" />&nbsp;
+    Gift - <input type="radio" id="gift_flag_2_gift" name="user_purchase[coupons_attributes[2]gift_flag]" value="1" /><br />
+    First and Last Name - <input type="text" id="first_name_2" name="user_purchase[coupons_attributes[2]first_name]" value="" />
+    <input type="text" id="last_name_2" name="user_purchase[coupons_attributes[2]last_name]" value="" /><br />
+    Email - <input type="text" id="email_address_2" name="user_purchase[coupons_attributes[2]email_address]" value="" /><br />
+    Gift Note - <input type="text" id="gift_text_2" name="user_purchase[coupons_attributes[2]gift_text]" value="" /><hr width="300" align="left" />
+
+    <br />
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+To run a simulated sale, use the following information:
+<ul>
+	<li>Card Number: 4012301230123010</li>
+	<li>Expiration: 1111</li>
+	<li>CVV: 123</li>
+
+	<li>Address &amp; Zip: Any</li>
+	<li>Amount: $1.00 or higher</li>
+</ul>
+
+
+<p><b>These tests are not live, and will not produce a valid authorization</b></p>
+
+
+<iframe style="width:800px;height:650px;" frameborder="no" name="payment_iframe"></iframe>

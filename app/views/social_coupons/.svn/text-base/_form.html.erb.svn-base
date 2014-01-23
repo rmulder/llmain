@@ -1,0 +1,103 @@
+<%= form_for(@social_coupon, :html => { :multipart => true }) do |f| %>
+  <% if @social_coupon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@social_coupon.errors.count, "error") %> prohibited this social coupon from being saved:</h2>
+
+      <ul>
+      <% @social_coupon.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <% if this_is_beta %>
+        <h1>Please don't update this if you are not Rick or have his permission!!!</h1>
+    <% end %>
+    <table>
+    <tr><td><%= f.label :business_id, 'Business ID' %></td><td><%= f.text_field :business_id %></td></tr>
+    <% #= Lookup (6 chars minimum): text_field_with_auto_complete :business, :business_name, {}, {:min_chars => 6, :after_update_element => "function(el, val){$('social_coupon_business_id').value=val.id;}"}
+    %><br />
+    <% #= f.label :message_title, 'Deal title' % > < %= f.text_field :message_title <br />
+%>
+    <tr><td><%= f.label :one_min_message, 'Deal headline' %></td><td><%= f.text_area :one_min_message, :rows => 3, :cols => 80 %><br />
+    <div id="social_coupon_one_min_message_charlimitinfo"></div></td></tr>
+    <tr><td><%= f.label :gift_headline, 'Gift headline' %></td><td><%= f.text_area :gift_headline, :rows => 3, :cols => 80 %><br />
+    <div id="social_coupon_gift_headline_charlimitinfo"></div></td></tr>
+    <tr><td><%= f.label :description %></td><td><%= f.text_area :description, :rows => 20, :cols => 80 %><br />
+    <div id="social_coupon_description_charlimitinfo"></div></td></tr>
+
+    <tr><td colspan="2"><h3>The deal will be promoted and available between these dates:</h3></td></tr>
+    <tr><td><%= f.label :start_timestamp, 'Promoted from' %></td><td><%= f.date_select :start_timestamp %></td></tr>
+    <tr><td><%= f.label :end_timestamp, 'Promoted until' %></td><td><%= f.date_select :end_timestamp %></td></tr>
+
+    <tr><td colspan="2"><h3>The deal will be redeemable between these dates:</h3></td></tr>
+    <tr><td><%= f.label :deal_start_timestamp, 'Valid from' %></td><td><%= f.date_select :deal_start_timestamp %></td></tr>
+    <tr><td><%= f.label :deal_end_timestamp, 'Valid until' %></td><td><%= f.date_select :deal_end_timestamp %><br /></td></tr>
+
+    <tr><td><%= f.label :message_terms, 'Deal terms' %></td><td><%= f.text_area :message_terms %>
+    <div id="social_coupon_message_terms_charlimitinfo"></div></td></tr>
+    <tr><td><%= f.label :transaction_term_id, 'LikeList terms ID' %></td><td><%= f.text_field :transaction_term_id %></td></tr>
+
+    <tr><td><%= f.label :city_id, 'City ID' %></td><td><%= f.text_field :city_id %>
+    <% #Lookup (2 chars minimum): = text_field_with_auto_complete :city, :city_name, {}, {:min_chars => 2, :after_update_element => "function(el, val){$('social_coupon_city_id').value=val.id;}"}
+    %></td></tr>
+
+
+    <% f.fields_for :images do |i| %>
+        <tr><td><%= i.label :image %></td><td><%= i.file_field :image %></td></tr>
+    <% end %>
+
+    <tr><td colspan="2"><% @social_coupon.images.each {|img| %>
+        <% if img.image.file? %>
+            <%= image_tag(img.image.url(:medium)) %><br />
+        <% end %>
+    <% } %></td></tr>
+
+    <tr><td><%= f.label :purchase_price %></td><td><%= f.text_field :purchase_price %></td></tr>
+    <tr><td><%= f.label :retail_value %></td><td><%= f.text_field :retail_value %></td></tr>
+    <tr><td><%= f.label :max_quantity_per_person, 'Max Qty' %><br />Per Person</td><td><%= f.text_field :max_quantity_per_person %></td></tr>
+    <tr><td><%= f.label :min_quantity_per_person, 'Min Qty' %><br />Per Person</td><td><%= f.text_field :min_quantity_per_person %></td></tr>
+    <tr><td><%= f.label :max_quantity_provided, 'Max Qty to Sell' %><br />(blank for no limit)</td><td><%= f.text_field :max_quantity_provided %></td></tr>
+
+    <tr><td colspan="2"><div class="actions">
+        <%= f.submit %>
+      </div></td></tr>
+    </table>
+<% end %>
+<script language="javascript">
+function limitChars(textid, limit, infodiv)
+{
+    var text = $('#'+textid).val();
+    var textlength = text.length;
+    if(textlength > limit) {
+        $('#' + infodiv).html('You cannot write more then '+limit+' characters!');
+        $('#'+textid).val(text.substr(0,limit));
+        return false;
+    } else {
+        $('#' + infodiv).html('You have '+ (limit - textlength) +' characters left.');
+        return true;
+    }
+}
+
+$(function(){
+    $('#social_coupon_one_min_message').keyup(function(){
+        limitChars('social_coupon_one_min_message', 255, 'social_coupon_one_min_message_charlimitinfo');
+    });
+    limitChars('social_coupon_one_min_message', 255, 'social_coupon_one_min_message_charlimitinfo');
+
+    $('#social_coupon_gift_headline').keyup(function(){
+        limitChars('social_coupon_gift_headline', 255, 'social_coupon_gift_headline_charlimitinfo');
+    });
+    limitChars('social_coupon_gift_headline', 255, 'social_coupon_gift_headline_charlimitinfo');
+
+    $('#social_coupon_message_terms').keyup(function(){
+        limitChars('social_coupon_message_terms', 2048, 'social_coupon_message_terms_charlimitinfo');
+    });
+    limitChars('social_coupon_message_terms', 2048, 'social_coupon_message_terms_charlimitinfo');
+
+    $('#social_coupon_description').keyup(function(){
+        limitChars('social_coupon_description', 16777215, 'social_coupon_description_charlimitinfo');
+    });
+    limitChars('social_coupon_description', 16777215, 'social_coupon_description_charlimitinfo');
+});
+</script>

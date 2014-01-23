@@ -1,0 +1,2 @@
+.public-content
+  = yield :unauth_right

@@ -1,0 +1,77 @@
+= Cacheify
+
+Easy caching of methods calls.
+
+Cacheify uses ActiveSupport::Cache::Store to do caching so, depending on
+what you choose, it may cache to memory, disk, memcache or whatever is 
+supported by the cache store.
+
+== Installation
+
+  sudo gem install cacheify
+
+== Usage
+
+Mixin the Cacheify module, use the +cacheify+ method.
+  
+  require 'cacheify'
+  
+  class Foo
+    def bar
+    end
+
+    include Cacheify
+    cacheify :bar, :expires_in => 1.hour
+  end
+
+And you're +foo+ instance calls to +bar+ will get cached.
+
+  Foo.new.bar # will hit cache if cached, or get cached otherwise
+
+Caveat: You have to call +cacheify+ *after* defining +bar+.
+
+To enable cacheify on the existing class just +extend+:
+
+  Thing.extend Cacheify
+  Thing.caches :very_expensive_operation
+
+To cache a method on a specific object:
+  
+  boo = Thing.new
+  boo.extend Cacheify
+  boo.caches :very_expensive_operation
+
+And only that instance of +Thing+ will have its +very_expensive_operation+ cached.
+
+If you use Cacheify <b>a lot</b>, you may do:
+
+  Object.extend Cacheify
+
+But that's just evil.
+
+=== Choosing your Cache store
+
+To setup what cache store Cacheify is using:
+
+  Cacheify.cache_store = :file_store, "tmp/cacheify"
+
+The arguments are the same as in ActiveSupport::Cache#lookup_store[http://api.rubyonrails.org/classes/ActiveSupport/Cache.html#M001011]
+
+== More info
+
+* ActiveSupport::Cache[http://api.rubyonrails.org/classes/ActiveSupport/Cache.html] is what's used for caching
+* Why cacheify? {Introductory blog post}[http://blog.hakeraj.com/easy-caching-of-methods-with-cacheify].
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2010 Sasa Brankovic. See LICENSE for details.

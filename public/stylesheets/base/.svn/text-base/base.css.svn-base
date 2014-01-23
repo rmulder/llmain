@@ -1,0 +1,155 @@
+/*
+ * base.css - Build up reset to AL standard css behaviors
+ */
+
+/*  clearfix: begin    */
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+/*  clearfix: end    */
+
+
+body, textarea, input[type="text"] {
+	color: #666;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size:11px;
+	line-height: 1.2;
+	padding-left: 2px;
+        text-align: left;
+}
+body{
+    background:url("/images/gradient.jpg") repeat-x scroll 0 0 #EEFFFF;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Bringing boldness back to headers and the strong element. */
+strong,
+dt {
+	font-weight: bold;
+}
+
+optgroup {
+	font-weight:normal;
+}
+
+/* Indicating to users that more info is available. */
+abbr,
+acronym {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+/* Bringing italics back to the em element. */
+em {
+	font-style: italic;
+}
+
+del {
+	/* Striking deleted phrases. */
+	text-decoration: line-through;
+}
+
+h1,
+h2,
+h3,
+p,
+fieldset {
+	margin-bottom: 10px;
+}
+
+h1 {
+	color: #000;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 22px;
+	font-family: verdana, helvetica, arial, sans-serif;
+	color: #000;
+}
+
+h3 {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+caption {
+	/* Coordinated margin to match cell's padding. */
+	margin-bottom: .5em;
+	/* Centered so it doesn't blend in to other content. */
+	text-align: center;
+}
+
+sup {
+	/* to preserve line-height and selector appearance */
+	vertical-align: super;
+}
+
+sub {
+	/* to preserve line-height and selector appearance */
+	vertical-align: sub;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+	border: 1px solid #c4d8eb;
+	margin: 0;
+	padding: 2px 1px;
+	resize: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+	border-color: #3d5aa8;
+}
+
+input[type="text"],
+input[type="password"] {
+	height:17px; /*width:150px;*/
+	font-size: 11px !important;
+}
+
+input[readonly="readonly"],
+input[disabled="disabled"] {
+	position:relative;
+	top:-2px;
+	background: transparent;
+	border: 0 none;
+}
+button::-moz-focus-inner { 
+    border: 0;
+    padding: 0;
+}

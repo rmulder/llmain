@@ -1,0 +1,9 @@
+= stylesheet "al/widgets/popup","al/widgets/loginPopup"
+-if user_signed_in?
+  = render :partial => "auth_left"
+  = render :partial => "auth_right"
+  = render :partial => "footer"
+-else
+  = render :partial => "unauth_left"
+  = render :partial => "unauth_right"
+  = render :partial => "footer"

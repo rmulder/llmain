@@ -1,0 +1,115 @@
+/
+  DOM Template for LoginPopup and JoinPopup
+#login-popup-container.popup-container
+  #login-popup-container-wrapper.popup-container-wrapper{:style => "width:700px;"}
+    #login-popup-container-header.popup-container-header
+      #login-popup-container-header-carrot.popup-container-header-carrot &nbsp;
+      %a#login-popup-container-header-close.popup-container-header-close X
+    / Login Popup Content
+    #login-popup-container-content.popup-container-content
+      %p#login-popup-prompt-container.hidden
+        Please
+        %a#login-popup-prompt-link Sign in
+        %span#login-popup-prompt
+      #login-popup-signin-content
+        #loginContayner
+          %h2.login-popup-content-title Sign in
+          .loginTxtOne Using your email address
+          %div
+            #login-popup-error.hidden.error
+            #login-popup-linked-signIn
+              = form_for("user", :url => user_session_path, :html => {:id => "login-popup-form-signin"} ) do |f|
+                %label{:for => "login-popup-username"}
+                  = f.text_field :email, {:id=>"login-popup-username", :value=> "Email Address", :class => "text", :tabindex =>"4"}
+                %label{:for => "login-popup-password"}
+                  = f.password_field :password , {:id=>"login-popup-password", :class => "text", :tabindex =>"4"}
+                  %a#login-popup-forgot-link Forgot your password?
+                %label.loginPopAuto{:for => "login-popup-auto-login"}
+                  %input#login-popup-auto-login{:checked => "checked", :name => "autologin", :tabindex => "5", :type => "checkbox", :value => "1"}/
+                  Keep me signed in
+                  %a{:href => "/faq#auto_login"} (What does this mean?)
+                = f.submit 'Sign in',{:class=>"bt-sign-in bt-round"}
+                .loading_gif.loading_gif_signin                 %input#login-popup-sn_id.text{:name => "sn", :type => "hidden", :value => "0"}/
+              %p.loginTxtTwo
+                Not a member?
+                %a#join-popup-registration Join
+        .loginSeparytr &nbsp;
+        .loginRyte
+          %p
+            %span Or
+            Use any of these services
+            %br/
+            %a{:href => "/auth/facebook"}
+              %img#banner_facebook_signin{:src => "/images/demo/facebook.png"}/
+            %br/
+            %a{:href => "/auth/foursquare"}
+              %img#banner_foursquare_signin{:src => "/images/foursquare_32.png"}/
+            %a{:href => "/auth/twitter"}
+              %img#banner_twitter_signin{:src => "/images/twitter_32.png"}/
+            %a{:href => "/auth/linked_in"}
+              %img#banner_linked_in_signin{:src => "/images/linked_in_32.png"}/
+    / Join In Container
+    #join-popup-container-content.popup-container-content.hidden{:style => "background-color:#DBE6F3;"}
+      %div
+      #join-popup-signin-content.clearfix
+        #joinContayner
+          %h2.login-popup-content-title Join LikeList
+          .clearfix{:style => "margin-top:35px;"}
+            #join-popup-error.hidden.error
+            #join-popup-linked-signIn
+              = form_for(user_registration_path, :url => user_registration_path) do |f|
+                %label{:for => "joinEmail"}
+                  Email:
+                  %input#joinEmail.text{:name => "user[email]", :style => "margin-top:5px;", :tabindex => "2", :type => "text", :value => ""}/
+                %label{:for => "user_password"}
+                  Password
+                  %input#user_password{:name => "user[password]", :tabindex => "4", :type => "password", :value => ""}/
+                %label{:for => "user_password_confirmation"}
+                  Password confirmation
+                  %input#user_password_confirmation{:name => "user[password_confirmation]", :tabindex => "4", :type => "password", :value => ""}/
+                .clearfix.joinPopupLine{:style => "margin-top:40px;"}
+                  .privacy_terms_info{:style => "width:210px;"}
+                    By clicking join you agree to LikeList's
+                    %a{:href => "/privacy", :tabindex => "6", :target => "_blank"} Privacy Policy
+                    and
+                    %br/
+                    = succeed "." do
+                      %a{:href => "/terms", :tabindex => "5", :target => "_blank"} Terms of Service
+                  #joinSubmit
+                    = f.submit "Sign up" ,{:class=>"bt-sign-in bt-round"}
+                    .loading_gif.join_loading_gif
+              %p.joinPopupLine.joinSignupLine
+                Already a member?
+                %a#signInWithYourEmail Sign in
+        .joinSeparytr &nbsp;
+        .joinRyte
+          %p
+            %span Or
+            Use any of these services
+            %br/
+            %a{:href => "/auth/facebook"}
+              %img#banner_facebook_signin{:src => "/images/demo/facebook.png"}/
+            %br/
+            %a{:href => "/auth/foursquare"}
+              %img#banner_foursquare_signin{:src => "/images/foursquare_32.png"}/
+            %a{:href => "/auth/twitter"}
+              %img#banner_twitter_signin{:src => "/images/twitter_32.png"}/
+            %a{:href => "/auth/linked_in"}
+              %img#banner_linked_in_signin{:src => "/images/linked_in_32.png"}/
+    <?php /**
+    * Forgot password form (initially hidden)
+    *
+    */
+    ?>
+    #login-popup-forgotpassword-content.popup-container-content.hidden
+      %h2.login-popup-content-title Forgot password
+      %p#login-popup-forgotpassword-instructions We'll send you an email with a temporary password. Once you log in, you can reset it in your Account Settings.
+      %form#login-popup-form-forgotpassword.floatFix{:action => ""}
+        %label{:for => "login-popup-forgotpassword-email"}
+          Email address
+          %input#login-popup-forgotpassword-email.text{:maxlength => "100", :name => "email", :tabindex => "21", :type => "text", :value => ""}/
+        %a#login-popup-forgotpassword-submit.bt-submit.bt-round
+          %span Submit
+        .loading_gif.loading_gif_forgot       %p#login-popup-forgotpassword-not-a-member
+        Not a member?
+        %a{:href => ""} Join LikeList

@@ -1,0 +1,11 @@
+San-Francisco-CA:
+  facebook: http://www.facebook.com/likelistwinecountry
+  twitter: http://twitter.com/likelistwinecty
+
+San-Jose-CA:
+  facebook: http://www.facebook.com/likelistsiliconvalley
+  twitter: http://twitter.com/likelistsv
+
+default:
+  facebook: http://www.facebook.com/likelist
+  twitter: http://twitter.com/likelist

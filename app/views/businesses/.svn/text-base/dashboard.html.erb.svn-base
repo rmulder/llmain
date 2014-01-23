@@ -1,0 +1,8 @@
+<% title "All Liked Businesses, by like count" %>
+
+
+
+<% for biz in @details %>
+    <%= render :partial => 'business_details', :locals => {:business => biz} %>
+<% end %>
+<%= will_paginate @businesses %>

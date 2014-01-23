@@ -1,0 +1,187 @@
+/*
+ * Common styles for Popups. If you find some styles that don't fit your popup, you can override the styles
+ * on your popup own style file and make sure the overriden styles don't effect globally.
+ */
+
+.popup-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 99999;
+}
+.popup-container-block {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+}
+
+.ac_results {
+	z-index: 100000;
+}
+
+.popup-container-wrapper {
+	padding-top: 10px;
+	width: 290px;
+	background: transparent url(/images/beta2/pixels1x1.gif) repeat scroll 0 0; /* ie7 behind elements issue, should move to a conditional comment file for ie */
+}
+
+.popup-container-header {
+	border-top: 1px solid #fff;
+}
+
+.popup-container-header-carrot {
+	background: transparent url(/images/beta2/main_sprite.png) no-repeat scroll -322px -192px;
+	position: absolute;
+	top: 4px;
+	left: 15px;
+	width: 12px;
+	height: 7px;
+}
+
+.popup-container-header-close {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	background: transparent url(/images/beta2/xBtn.png) no-repeat scroll 0 0;
+	height: 16px;
+	width: 16px;
+	text-indent: -9999px;
+}
+
+.popup-container-header-close:hover {
+	background:transparent url(/images/beta2/xBtn.png) no-repeat scroll -16px 0;
+}
+
+.popup-container-content {
+	border: 1px solid #fff;
+	border-top: 0px none;
+	background: #e4f0fc;
+	padding: 10px;
+	color: #666;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 11px; /* should change to em */
+	-moz-box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.4);
+	box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.4);
+	-ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=5px, OffY=5px, Color='#777777')";
+}
+
+.popup-content-title {
+	padding-right: 12px;
+	margin: 0px 0px 8px 0px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 11px; /* should change to em */
+	line-height: 12px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.popup-triangle-down, .popup-triangle-up{
+	display:block;
+	padding-left: 15px;
+	background: transparent url(/images/beta2/bullet_toggle_plus.png) no-repeat scroll center left;
+}
+
+.popup-triangle-up{
+	background-image:url(/images/beta2/bullet_toggle_minus.png);
+}
+
+
+
+input[type='text']:focus, textarea:focus, input[type='text']:active, textarea:active {
+	-moz-outline: 0px none black;
+	outline: 0px none black;
+	padding: 2px 1px;
+}
+
+.popup-error-message {
+	color: #c00;
+	text-align: center;
+	margin-top: 2px;
+	margin-bottom: 6px;
+	display: none;
+}
+
+.popup-container .error {
+	font-size: 11px;
+}
+
+/**
+ * Add Location Popup
+ */
+#add-location-popup .popup-container-wrapper{
+	width: 200px;
+}
+#add-location-popup-input {
+	width: 165px;
+}
+
+/**
+ * Confirmation Popup
+ */
+#confirmation-popup-message {
+	width: 100%;
+	height: 100%;
+	margin: 0 0 10px 0 !important;
+	padding: 0 !important;
+}
+#confirmation-popup-container-wrapper {
+	width: 200px;
+}
+
+#confirmation-popup-buttons-bar .popup-button-yes {
+	float: left;
+}
+
+/**
+ * User lists
+ */
+.user-middle-list {
+	background: #fff;
+	max-height: 280px;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.user-list label {
+	position: relative;
+	height: 50px;
+	display: block;
+	padding: 10px;
+/*	margin: 0 5px;*/
+}
+.user-list label:hover {
+	background: #e5eff9;
+}
+.user-list label + label {
+	border-top: 1px solid #cfdfef;
+}
+
+.user-list label img {
+	margin-right: 10px;
+	border: 1px solid #cfdfef;
+	float: left;
+}
+
+.user-list label span {
+	line-height: 12px;
+	height: 12px;
+	padding-top: 19px;
+	display: inline-block;
+}
+
+.user-list label input {
+	float: right;
+	margin: 0;
+	margin-top: 20px;
+	line-height: 10px;
+}
+
+.popup-notification {
+	padding: 5px 10px;
+	border: 1px solid #cfdfef;
+	margin: 5px 0;
+	overflow: hidden;
+}

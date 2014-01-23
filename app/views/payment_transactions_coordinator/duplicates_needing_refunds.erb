@@ -1,0 +1,37 @@
+<table id="refundsTable" class="tablesorter">
+    <thead>
+    <tr>
+        <th>Transaction</th>
+        <th>User Purchase</th>
+        <th>Name</th>
+        <th>Business</th>
+        <th>Coupon</th>
+        <th>Amount</th>
+        <th>Timestamp</th>
+        <th>MeS Transaction ID</th>
+    </tr>
+    </thead>
+  
+    <% @payment_transactions.each do |trans| %>
+        <tr>
+            <td><%= trans.id %></td>
+            <td><%= trans.user_purchase_id %></td>
+            <td><%= trans.user_purchase.user.first_name %> <%= trans.user_purchase.user.last_name %></td>
+            <td><%= trans.user_purchase.coupons[0].social_coupon.business.business_name %></td>
+            <td><%= trans.user_purchase.coupons[0].social_coupon.one_min_message %></td>
+            <td><%= number_to_currency(trans.amount, :precision => 2) %></td>
+            <td><%= trans.created_at %></td>
+            <td><%= trans.transaction_id %></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= link_to 'Back to Social Coupons', '/social_coupons' %>
+
+<script type="text/javascript">
+$(document).ready(function()
+    {
+        $("#refundsTable").tablesorter();
+    }
+);
+</script>

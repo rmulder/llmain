@@ -1,0 +1,35 @@
+- content_for :auth_left do
+  .inlay-wrap
+    .inlay-container
+      .inlay-inner-left
+        .fake-avatar.rounded
+        .avatar-right-text
+          %h3 My Auth LikeList
+          %p.mini-profile-small-text All the Businesses that I like or want to try
+      .inlay-inner-right
+        %h3.al-button.rounded Share
+        %p Last updated 12/19/2010
+  .login_widget{:style => "position:absolute;top:10px;left: 10px;z-index:5000;"}
+    = render :partial => "authentications/login_popup"
+  .list-wrap.grid_10
+    = 6.times do
+      .list-container.container
+        .list-inner.column.span-15
+          .mini-profile.column.push-1.rounded
+            .mini-profile-inner.column.span-13
+              .mini-profile-inner-left.column.span-6
+                .fake-avatar.rounded
+                .mini-profile-avatar-text
+                  %h3 Eric's List Item
+                  %p.mini-profile-small-text Electronics, Audio & Video Equipment
+                  %p.mini-profile-location City, ST (123) 123-4567
+              .mini-profile-inner-right.span-6
+                .mini-profile-links-container
+                  .mini-profile-links-inner
+                    %h3.al-button.rounded Like It
+                    %ol
+                      %li Try
+                      %li | Ask Friends
+                      %li | Share
+              .mini-profile-campaign
+                %strong DEAL: This is the deal of the century!

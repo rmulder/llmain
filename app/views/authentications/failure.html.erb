@@ -1,0 +1,9 @@
+<script>
+var error_data = '<%=raw @error_data %>';
+if (window.opener) {
+    window.opener.AL.widgets.SubWindow.callback("facebook",error_data);
+    window.close();
+} else {
+    document.write(error_data);
+}
+</script>

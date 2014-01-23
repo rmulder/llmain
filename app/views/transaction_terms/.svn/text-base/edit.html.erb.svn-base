@@ -1,0 +1,6 @@
+<h1>Editing transaction_term</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @transaction_term %> |
+<%= link_to 'Back', transaction_terms_index_path %>

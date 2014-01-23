@@ -1,0 +1,24 @@
+<%= form_for :list, @list, :html => { :multipart => true } do |f| %>
+  <% if @list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+
+      <ul>
+      <% @list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+        <%= f.text_field :list_name %>
+        <%= f.text_area :list_description %>
+        <%= f.file_field :avatar %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+  <% form_for :user, @user, :url => user_path, :html => { :multipart => true } do |form| %>
+    <%= form.file_field :avatar %>
+  <% end %>

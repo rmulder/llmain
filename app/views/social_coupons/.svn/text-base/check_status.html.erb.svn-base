@@ -1,0 +1,7 @@
+purchased: <%= @social_coupon.quantity_purchased %><br />
+remaining: <%= @social_coupon.quantity_remaining %><br />
+time left: <%= @social_coupon.days_left %> days,
+<%= @social_coupon.hours_left %> hours,
+<%= @social_coupon.minutes_left %> minutes and
+<%= @social_coupon.seconds_left %> seconds<br />
+seconds left: <%= @social_coupon.time_left %><br />

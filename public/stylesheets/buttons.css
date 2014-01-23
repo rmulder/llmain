@@ -1,0 +1,498 @@
+/**
+ * Globally Accessible Button Definitions
+ *
+ */
+.bt-round {
+	display: inline-block;
+	padding: 4px 10px 6px 10px;
+	font-size: 12px;
+	line-height: 1;
+	color: #fff !important;
+	cursor: pointer;
+	font-weight: bold;
+	background: #fb9459;
+	background-image: -moz-linear-gradient(top, #fdca98, #fb6d14);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fdca98),color-stop(1, #fb6d14));
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdca98', EndColorStr='#fb6d14');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdca98', EndColorStr='#fb6d14')";
+	white-space: nowrap;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #f68a33;
+	border-color: rgba(245, 138, 51, 0.5);
+}
+.bt-round span {
+	line-height: 11px;
+}
+.bt-round:hover, .bt-round:focus {
+	background: #fd9f30;
+	background-image: -moz-linear-gradient(top, #fdca98, #fd9f30);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fdca98),color-stop(1, #fd9f30));
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdca98', EndColorStr='#fd9f30');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdca98', EndColorStr='#fd9f30')";
+	text-decoration: none;
+	/*border: 1px solid #fb6d14;*/
+}
+
+.bt-plain,
+.bt-round.bt-cancel,
+.bt-round.bt-cancel:hover,
+.bt-round.bt-reset,
+.bt-round.bt-reset:hover {
+	display: inline-block;
+	padding: 4px 0 6px;
+	font-size: 12px;
+	line-height: 20px;
+	cursor: pointer;
+	margin-right: 8px;
+	line-height: 20px;
+	color: #3d5aa8 !important;
+	font-weight: normal;
+	background: transparent;
+	border: 0px none;
+	filter: none;
+	-ms-filter: 'none';
+}
+.bt-round.bt-cancel:hover,
+.bt-round.bt-reset:hover {
+	text-decoration: underline;
+}
+
+.bt-cancel {
+	vertical-align: middle;
+	text-decoration: none;
+	margin-right: 8px;
+	line-height: 20px;
+	background: transparent;
+	border: 0 none;
+	color: #3d5aa8 !important;
+	font-weight: normal;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+/**
+ * New css buttons for listing actions (temporary)
+ */
+.bt-listing-action,
+.bt-listing-action.bt-split .bt-primary,
+.bt-listing-action .bt-secondary {
+	position: relative;
+	display: block;
+	font-size: 18px;
+	line-height: 18px;
+	color: #fff;
+	background: #4c60b4;
+	padding: 4px 10px 6px;
+	white-space: nowrap;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-image: -moz-linear-gradient(top, #a5aac7, #4c60b4);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #a5aac7),color-stop(1, #4c60b4));
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#a5aac7', EndColorStr='#4c60b4');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#a5aac7', EndColorStr='#4c60b4')";
+	float: right;
+}
+
+/* temporary button style */
+.bt-listing-action.bt-split {
+	padding: 0;
+	float: none;
+}
+
+/* temporary button style */
+.bt-listing-action.bt-split .bt-primary {
+	position: absolute;
+	top: 0;
+	right: 22px;
+	padding-right: 10px;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	float: none;
+}
+
+/* temporary button style */
+.bt-listing-action .bt-secondary {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 28px;
+	padding: 0;
+	border-left: 2px solid #fff;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	float: none;
+	background: #5c70c4;
+	background-image: -moz-linear-gradient(top, #b5bad7, #5c70c4);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #b5bad7),color-stop(1, #5c70c4));
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#b5bad7', EndColorStr='#5c70c4');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#b5bad7', EndColorStr='#5c70c4')";
+}
+
+/* temporary button style */
+.bt-listing-action .bt-secondary .arrow-down {
+	/*display: none;*/
+	margin: 12px 4px 0;
+}
+
+/* temporary button style */
+.bt-listing-action:hover {
+	text-decoration: none;
+}
+
+/* temporary button style */
+.bt-listing-action:hover .bt-secondary .arrow-down,
+.bt-listing-action .bt-secondary:hover .arrow-down,
+.bt-listing-action .bt-secondary.hover .arrow-down {
+	display: block;
+}
+
+/* temporary button style */
+.bt-listing-action .bt-secondary:hover,
+.bt-listing-action .bt-secondary.hover {
+	background: #6c80d4;
+	background-image: -moz-linear-gradient(top, #c5cae7, #6c80d4);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #c5cae7),color-stop(1, #6c80d4));
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#c5cae7', EndColorStr='#6c80d4');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#c5cae7', EndColorStr='#6c80d4')";
+}
+
+/* temporary button style */
+.bt-listing-action.bt-listing-action-completed,
+.bt-listing-action.bt-listing-action-completed.bt-split .bt-primary {
+	background: #fff;
+	border: 1px solid #3d5aa8;
+	font-size: 12px;
+	color: #3d5aa8;
+	padding: 4px 5px;
+/*	background-image: -moz-linear-gradient(top, #e2e7e2, #8e9397);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #e2e7e2),color-stop(1, #8e9397));
+*/	filter:  none;
+	-ms-filter: none;
+}
+.bt-listing-action.bt-listing-action-completed.bt-split .bt-primary {
+}
+.bt-listing-action.bt-listing-action-completed.bt-split {
+	border: 0 none;
+}
+
+/* temporary button style */
+.bt-listing-action.bt-listing-action-completed:hover .bt-secondary,
+.bt-listing-action.bt-listing-action-completed .bt-secondary.hover {
+	/*background: #aea3a7;
+		background-image: -moz-linear-gradient(top, #eaefea, #aea3a7);
+		background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaefea),color-stop(1, #aea3a7));
+		filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaefea', EndColorStr='#aea3a7');
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaefea', EndColorStr='#aea3a7')";*/
+}
+
+/* temporary button style */
+.bt-listing-action.bt-listing-action-completed .bt-secondary:hover {
+/*	background: #bfc0c4;
+	background-image: -moz-linear-gradient(top, #f1f3f0, #bfc0c4);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f1f3f0),color-stop(1, #bfc0c4));
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f3f0', EndColorStr='#bfc0c4');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f3f0', EndColorStr='#bfc0c4')";
+*/}
+
+
+
+/**
+ * Text Buttons
+ */
+/* button background and span hide */
+.btn_create_list,
+.btn_update_photo,
+.btn_select_friends,
+.btn_sign_in,
+.btn_send,
+.btn_save,
+.btn_add_to_likelist,
+.btn_add_to_trylist,
+.btn_go,
+.btn_ok,
+.btn_search,
+.btn_add,
+.btn_edit,
+.btn_preview_promosite,
+.btn_accept,
+.btn_rename,
+.btn_remove,
+.btn_upload,
+.btn_submit,
+.btn_add_more_friends,
+.btn_accept_invitation,
+.btn_get_directions,
+.btn_get_started,
+.btn_invite_friends,
+.btn_recommend,
+.btn_import_contacts,
+.btn_ask_again,
+.btn_yes,
+.btn_ask_for_more_rec,
+.btn_join,
+.btn_select,
+.btn_next,
+.btn_claim,
+.btn_done,
+.btn_join_alikelist,
+.al-fb-icon {
+	display:block; width:26px; height:26px; float:left; border:0px none;
+	background-color:transparent !important;
+	background:transparent url(/images/beta2/main_sprite.png) no-repeat 0 -1112px;
+	text-align: -9999px;
+	cursor: pointer;
+}
+
+.btn_create_list span,
+.btn_update_photo span,
+.btn_select_friends span,
+.btn_sign_in span,
+.btn_send span,
+.btn_save span,
+.btn_add_to_likelist span,
+.btn_add_to_trylist span,
+.btn_go span,
+.btn_ok span,
+.btn_search span,
+.btn_add span,
+.btn_edit span,
+.btn_preview_promosite span,
+.btn_accept span,
+.btn_rename span,
+.btn_remove span,
+.btn_upload span,
+.btn_submit span,
+.btn_add_more_friends span,
+.btn_accept_invitation span,
+.btn_get_directions span,
+.btn_get_started span,
+.btn_invite_friends span,
+.btn_recommend span,
+.btn_import_contacts span,
+.btn_ask_again span,
+.btn_yes span,
+.btn_ask_for_more_rec span,
+.btn_join span,
+.btn_select span,
+.btn_next span,
+.btn_claim span,
+.btn_done span,
+.btn_join_alikelist span {
+	display:none;
+}
+
+
+/* custom image buttons positions */
+
+.btn_create_list {
+	width:86px;
+	background-position:0 -632px;
+}
+
+.btn_update_photo {
+	width:101px;
+	background-position:0 -664px;
+}
+
+.btn_select_friends {
+	width:101px;
+	background-position:0 -696px;
+}
+
+.btn_sign_in {
+	width:63px;
+	background-position:0 -728px;
+}
+
+.btn_select {
+	width:63px;
+	background-position:0 -760px;
+}
+
+.btn_claim {
+	width:63px;
+	background-position:0 -792px;
+}
+
+.btn_next {
+	width:63px;
+	background-position:0 -824px;
+}
+
+.btn_done {
+	width:63px;
+	background-position:0 -856px;
+}
+
+.btn_send {
+	width:63px;
+	background-position:0 -887px;
+}
+
+.btn_save {
+	width:63px;
+	background-position:0 -919px;
+}
+
+.btn_add_to_likelist{
+	width:131px;
+	background-position:0 -984px;
+}
+
+.btn_add_to_trylist {
+	width:131px;
+	background-position:0 -1016px;
+}
+
+.btn_go {
+	height:19px; margin-top:2px;
+	background-position:0 -1080px;
+}
+
+.btn_ok {
+	/* defined as default up top */
+}
+
+.btn_search {
+	width:63px;
+	background-position:-427px -2px;
+}
+
+.btn_add {
+	width:35px;
+	background-position:0 -1144px;
+}
+
+.btn_edit{
+	width:63px;
+	background-position:0 -1208px;
+}
+
+.btn_preview_promosite{
+	width:131px;
+	background-position:0 -1240px;
+}
+
+.btn_accept{
+	width:86px;
+	background-position:0 -1271px;
+}
+
+.btn_rename{
+	width:86px;
+	background-position:0 -1304px;
+}
+
+.btn_remove{
+	width:86px;
+	background-position:0 -1336px;
+}
+
+.btn_upload {
+	width:86px;
+	background-position:0 -1368px;
+}
+
+.btn_submit {
+	width:86px;
+	background-position:0 -1400px;
+}
+
+.btn_add_more_friends {
+	width:131px;
+	background-position:0 -1432px;
+}
+
+.btn_accept_invitation {
+	width:131px;
+	background-position:0 -1464px;
+}
+
+.btn_get_directions {
+	width:108px;
+	background-position:0 -1496px;
+}
+
+.btn_get_started {
+	width:104px;
+	background-position:0 -1528px;
+}
+
+.btn_invite_friends {
+	width:104px;
+	background-position:0 -1560px;
+}
+
+.btn_recommend {
+	width:104px;
+	background-position:0 -1591px;
+}
+
+.btn_import_contacts {
+	width:116px;
+	background-position:0 -1624px;
+}
+
+.btn_ask_again {
+	width:86px;
+	background-position:0 -1655px;
+}
+
+.btn_yes {
+	width:35px;
+	background-position:0 -1688px;
+}
+
+.btn_ask_for_more_rec {
+	width:209px;
+	background-position:0 -1720px;
+}
+
+.btn_join {
+	width:63px;
+	background-position:0 -1752px;
+}
+.btn_join_alikelist {
+	width:144px;
+	height:36px;
+	background-position:0 -2016px;
+}
+
+
+/**
+ * Icons
+ * TODO: figure out a smart way to move the business listing - aka action icons -
+ * into this file.
+ */
+
+/**
+ * .al-fb-icon and .al-fb-text
+ * a small facebook icon and blue colored text
+ */
+.al-fb-icon {
+	position: relative;
+	top: 4px;
+	background-position: -104px -61px !important;
+	display: inline-block !important;
+	float: none !important;
+	height: 18px;
+	padding: 0 !important;
+	width: 18px;
+	margin: 0 3px 0 0 !important;
+	cursor: default;
+}
+.al-fb-text {
+	color: #3d5aa8;
+}

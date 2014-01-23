@@ -1,0 +1,52 @@
+<h1>Social Coupons</h1>
+
+<%= link_to 'New Social coupon', new_social_coupon_path %> |
+<%= link_to 'Deal of the day', 'social_coupons/deal_of_the_day' %>
+<br />
+<table id="couponsTable" class="tablesorter">
+  <thead>
+  <tr>
+    <th>Business</th>
+    <th>City</th>
+    <th>Headline</th>
+    <th>Promote from<br />(00:00:00)</th>
+    <th>Promote to<br />(23:59:59)</th>
+    <th>Redeem from<br />(00:00:00)</th>
+    <th>Redeem to<br />(23:59:59)</th>
+  </tr>
+  </thead>
+  <tbody>
+
+<% @social_coupons.each do |social_coupon| %>
+  <tr>
+    <td><%= social_coupon.business.business_name %></td>
+    <td><%= social_coupon.city.city_name %></td>
+    <td><%= social_coupon.one_min_message %></td>
+    <td><%= social_coupon.start_timestamp.to_s[0,10] %></td>
+    <td><%= social_coupon.end_timestamp.to_s[0,10] %></td>
+    <td><%= social_coupon.deal_start_timestamp.to_s[0,10] %></td>
+    <td><%= social_coupon.deal_end_timestamp.to_s[0,10] %></td>
+
+    <td><%= link_to 'Show', social_coupon %></td>
+    <td><%= link_to 'Edit', edit_social_coupon_path(social_coupon) %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Social coupon', new_social_coupon_path %> |
+<%= link_to 'Deal of the day', '/social_coupons/deal_of_the_day' %><br />
+<%= link_to 'Payout Report', '/social_coupons/payout_report' %> |
+<%= link_to '(as csv)', '/social_coupons/payout_report.csv' %>
+
+<br />
+<%= link_to 'Duplicate Transactions', '/payment_transactions_coordinator/duplicates_needing_refunds' %>
+<script type="text/javascript">
+$(document).ready(function()
+    {
+        $("#couponsTable").tablesorter();
+    }
+);
+</script>

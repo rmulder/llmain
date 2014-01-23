@@ -1,0 +1,27 @@
+<h1>Listing coupons</h1>
+
+<table>
+  <tr>
+    <th>Business</th>
+    <th>Coupon</th>
+    <th>User</th>
+    <th>Purchase Date</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @coupons.each do |coupon| %>
+  <tr>
+    <td><%= coupon[:business]['business_name'] %></td>
+    <td><%= coupon[:social_coupon]['description'] %></td>
+    <td><%= coupon[:user]['first_name'] %> <%= coupon[:user]['last_name'] %></td>
+    <td><%= coupon[:coupon]['created_at'] %></td>
+    <td><%= link_to 'Show', '/coupons/' + coupon[:coupon]['coupon_unique_number'].to_s %></td>
+    <td><%= link_to 'Show Purchase', '/user_purchases/' + coupon[:coupon]['user_purchase_id'].to_s %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', '/social_coupons' %>

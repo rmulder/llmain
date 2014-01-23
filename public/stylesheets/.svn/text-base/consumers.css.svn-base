@@ -1,0 +1,88 @@
+/* content */
+body{font-family:"Myriad Pro","Segoe UI",Helvetica, Arial, sans-serif;}
+/* **************** CONTENT OBJECTS ***************** */
+
+/* ====== Elements ====== */
+img{display:block;}
+em{font-style: italic;}
+strong{font-weight:bold;}
+hr{border: 5px solid #e2e2e2; border-width: 0 0 5px 0; margin: 20px 10px 10px 10px;}
+code{color:#0B8C8F;}
+
+.important a{font-weight:bold;}/* what is this? */
+/* links */
+a {color: #2c4460; text-decoration: none;}
+a:focus, a:hover {text-decoration: underline;}
+a:focus{background-color:#FFFFCC;}
+a:visited { color:#005a9c; }
+/* ====== Lists ======*/
+/* numbered list */
+ol.simpleList li{list-style-type: decimal; margin-left:40px;}
+/* standard list */
+ul.simpleList li{list-style-type:disc; margin-left:40px;}
+/* ====== blockquote ====== */
+cite{display:block; text-align:right; padding-top: 10px;}
+/* ====== callout ====== */
+.callout{font-size:189%;color:#999999; font-style:italic;}
+.callout cite{display:block; text-align:right;padding-top: 30px; font-size:69.25%;}
+.callout span.quot{font-size: 500%; vertical-align: sub; color:#e2e2e2; line-height:25px; font-weight:bold;}
+.callout span.quotLast{vertical-align:middle;}
+/* ====== image treatments (get more from jason santa maria) ====== */
+.caption{font-size:13px; color:#666666; font-style:italic;padding-top:0;}
+/* will need to either
+1. find a way to capture the width of the caption in the width of the image or flash
+2. Set some default widths, mby use flickr widths?
+*/
+/* ====== special formatting classes ====== */
+.detail{color: #777; font-size:11px;display:block;}
+/* ====== images ====== */
+.icon{margin-right: 5px;}
+
+/* ====== Headings ====== */
+/* .h1-.h6 classes should be used to maintain the semantically appropriate heading levels - NOT for use on non-headings */
+h1, .h1{font-size:196%; font-weight:normal; font-style: normal; color:#999999;}
+h2, .h2{font-size:167%; font-weight:normal; font-style: normal; color:#999999;}
+h3, .h3{font-size:146.5%; font-weight:normal; font-style: normal; color:#999999;}
+h4, .h4{font-size:123.1%; font-weight:normal; font-style: normal; color: #999999;}
+h5, .h5{font-size:108%; font-weight:bold; font-style: normal; color:#999999;}
+h6, .h6{font-size:108%; font-weight:normal; font-style: italic; color:#999999;}
+/* if additional headings are needed they should be created via additional classes, never via location dependant styling */
+.category{font-size:108%; font-weight:normal; font-style: normal; text-transform:uppercase; color: #333;}
+.category a{color: #333;}
+
+
+/*******************/
+/* custom content */
+
+
+/*******************/
+
+.pad10{padding:10px;}
+/* listing container */
+#listing_content_container{font-size:10px;width:615px;}
+
+/* listing */
+.listing-container.listing-container-user-like{padding:5px;border:1px solid black;}
+.listing-data{float:left;margin:0 0 0 20px;padding:12px;}
+.floatFix{float:left;display:inline-block;}
+.listing-image{padding-left:15px;float:left;margin:10px;}
+.listing-name{font-size:13px;font-weight:bold;}
+.listing-action{clear:left;}
+span.aux{float:left;}
+.listing-aux{border:1px solid black;}
+.bt-listing-action.bt-like-it.bt-split{font-size:9px;}
+
+/* inlay */
+.inlay-wrap{height:60px;}
+.inlay-search{}
+.inlay-search span h3.search{float:left; margin: 0 0 0 50px; color:black;}
+.inlay-search span h3.browse{margin:0 0 0 50px;}
+.inlay-search span h2.control{}
+
+
+#bd_main{
+    float:left;
+    display:inline;
+    width: 628px;
+    border: 1px solid #808080;
+}

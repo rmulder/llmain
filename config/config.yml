@@ -1,0 +1,82 @@
+# if you need to override any of these settings, create a config.local.yml with a corresponding
+# environment section (like 'development:') and any overriding values and DO NOT check it into SVN
+# do not create a section like test: with no items in it here or in config.local.yml
+# items in the environment: sections below override items in the common: section of config.local.yml
+# config.local.yml:development > config.yml:development > config.local.yml:common > config.yml:common
+
+common:
+  admin_email: admin@likelist.com
+  db_adapter: mysql
+  db_encoding: utf8
+  db_reconnect: false
+  db_host: x.db.likelist.com
+  db_database: beta
+  db_port: 3306
+  db_pool: 5
+  db_username: devuser
+  db_password: nihGG_$3TbV
+  open_id_fs_dir: /tmp
+  base_url: http://localhost:3000/
+  
+  fb_app_id: 166619400024920
+  fb_app_secret: c80960c33acfcff3ba236aaa1988493d
+  fb_api_key: 42dad769e6f19261d097e2eff1cbba0f
+
+  tw_consumer_key: m2tCVOfHxWYosY7luLRQg
+  tw_consumer_secret: Ibd6ZvRHyqkPwrDhih281hrr5nf8ZRKVkQMugx203w
+
+  fs_consumer_key: 41R0UKKFMRHWZCGPP4UR4GTQMRBDS4T5SJZ3NYNITBPJQNIT
+  fs_consumer_secret: M3P02SEWA5GEK0ZVKDWUC3IUE0T54DVZ1ZVPZZ0X202L15VZ
+
+  li_consumer_key: zXYXVNiJ1eoCllzxcTvq7AFEliJK9mgfAvP_THEo3CscGiUjS3xz8EDHlRSrbNd9
+  li_consumer_secret: kZcdVwdvguFemg7dUmR7UjAEMJbdpNoKr-Va97asF9ExzzRI8cmSkQnqSaCAG6up
+
+  # unlike other social networks, gowalla needs the following setting in the api
+  # Application website 	http://server.likelist.com:82/auth/gowalla/callback?error=access_denied
+  gw_consumer_key: 3ea0e199ae5743da9336ad903bd4c169
+  gw_consumer_secret: 3eabf1268335490c9c3da08a24b7e7cf
+
+  gg_consumer_key: 168106131138.apps.googleusercontent.com
+  gg_consumer_secret: xLpha4mXTzZ6-DPf1F_gcXX3
+
+  tb_consumer_key: pP9BioMkldDwnsnG1sjXwvYtgkVoOq2xfTGdAcnFedgPx1lk6o
+  tb_consumer_secret: buLSdoc7iuk91tZclsFqC4XRzwwMkpgre3fAZhtHfaTR0BOBA6
+
+  cacheify_redis_url: redis://64.245.3.170:6379/6
+  search_redis_host: 64.245.3.170
+  search_redis_port: 6379
+  search_redis_db: 5
+  member_redis_db: 3
+  user_time_zone: Pacific Time (US & Canada)
+  server_time_zone: UTC
+  http_basic_username:
+  http_basic_password:
+  solr_host: 64.245.3.170
+  solr_port: 11299
+  aria_inv_item_deal: likelistdeal01
+  aria_inv_item_deal_id: 10047781
+  image_path_square50: square50/
+  image_path_square100: square100/
+  image_path_square200: square200/
+  image_path_originalcrop: originalcrop/
+  # FILE path to the image directory on the server
+  image_file_path: /var/www/html/alikeListBetaProd/files/photoimages/promoimages/
+  avatar_file_path: /var/www/html/alikeListBetaProd/images/beta2/business_avatars/
+  # URL path to the image directory (e.g hostname/COMPLETED_URL_PATH/some_image_name.png should serve the image)
+  image_url: /files/photoimages/promoimages/
+  avatar_image_url: /images/beta2/business_avatars/
+  image_server: http://dev.likelist.com
+  list_image_file_path: /var/www/html/alikeListBetaProd/files/photoimages/listimages/
+  list_image_url: /files/photoimages/listimages/
+
+development:
+  dummy:
+
+dev82:
+  dummy:
+
+test:
+  dummy:
+
+production:
+  dummy:

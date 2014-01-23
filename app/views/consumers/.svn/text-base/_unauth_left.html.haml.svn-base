@@ -1,0 +1,45 @@
+- content_for :unauth_left do
+  .inlay-wrap
+    .inlay-container.container
+      .inlay-inner-left.column.span-5.push-3
+        %p Search all Lists
+      .inlay-inner-right.column.span-4.push-4
+        %p Browse Categories
+      .inlay-inner-bottom.column.span-15
+        .al-navigator.span-10.push-3.rounded
+          %p
+            %em
+              View
+              %strong
+                %em Featured Lists
+              about
+              %strong
+                %em Mountain View, CA
+              from
+              %strong
+                %em Everyone
+  .login_widget{:style => "position:absolute;top:10px;left: 10px;z-index:5000;"}
+    = render :partial => "authentications/login_popup"
+  .list-wrap
+    - 3.times do
+      .large-list-wrap-multi.container.rounded
+        .large-list-container.column.span-16.push-1
+          .large-list-bd
+            %h3 Most Active Lists
+            - 1.times do
+              .large-list
+                - 5.times do
+                  .micro-profile-container.column.span-5.rounded
+                    .micro-profile
+                      .fake-avatar.rounded
+                      .micro-profile-right-text
+                        %p.micro-profile-title My Favorite Bay Area Audio and Video Stores
+                        %p.micro-profile-stats
+                          %strong
+                            %em 225
+                          Likes in
+                          %strong
+                            %em 119
+                          Cities
+          .large-list-ft
+            = link_to "more>", '', {:class => "more-lists-link"}

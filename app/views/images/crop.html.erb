@@ -1,0 +1,87 @@
+<script type="text/javascript" charset="utf-8">
+    function onEndCrop(coords, dimensions) {
+        $('x1').value = coords.x1;
+        $('y1').value = coords.y1;
+        $('width').value = dimensions.width;
+        $('height').value = dimensions.height;
+    }
+
+    // example with a preview of crop results, must have minimumm dimensions
+    Event.observe(
+            window,
+            'load',
+            function() {
+                new Cropper.ImgWithPreview(
+                        'testImage',
+                {
+                    minWidth: 90,
+                    minHeight: 90,
+                    ratioDim: { x: 170, y: 170 },
+                    displayOnInit: true,
+                    onEndCrop: onEndCrop,
+                    previewWrap: 'previewArea'
+                }
+                        )
+            }
+            );
+</script>
+<style type="text/css">
+    label {
+        clear: left;
+        margin-left: 50px;
+        float: left;
+        width: 5em;
+    }
+
+    #testWrap {
+        float: left;
+        margin: 0px 0 0 0px;
+        padding-right: 20px;
+    }
+
+    #previewArea {
+        margin: 0px 0 0 0px;
+        float: left;
+    }
+
+    #results {
+        clear: both;
+    }
+
+    #testImage{
+        /*setting max-width messed up the scaling on the cropper*/
+        /*max-width: 480px;
+        max-height: 480px;
+        width: expression(this.width > 480 ? "480px" : true);
+        height: expression(this.height > 480 ? "480px" : true);*/
+    }
+</style>
+<br/><br/>
+
+<div id="testWrap">
+  <img src="<%= @image %>" alt="test image" id="testImage"/>
+</div>
+
+<div id="previewArea"></div>
+
+<% form_tag "/images/save" do %>
+
+    <div><%= submit_tag 'Save' %></div>
+
+<div id="results">
+  <%= hidden_field_tag "image_name", "#{@image}" %>
+  <%= hidden_field_tag "business_id", "#{@business_id}" %>
+  <%= hidden_field_tag "x1", "x1" %>
+  <%= hidden_field_tag "y1", "y1" %>
+  <%= hidden_field_tag "width", "width" %>
+  <%= hidden_field_tag "height", "height" %>
+</div>
+<% end %>
+
+<p>
+  <%= link_to "View All", '/businesses/dashboard' %>
+</p>
+
+
+
+

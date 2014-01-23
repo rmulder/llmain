@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+Business: <%= @social_coupon.business.business_name %> (#<%= @social_coupon.business_id %>)<br />
+Deal headline: <%= @social_coupon.one_min_message %><br />
+Gift headline: <%= @social_coupon.gift_headline %><br />
+Description: <%= @social_coupon.description %><br />
+Start Time: <%= @social_coupon.start_timestamp %><br />
+End Time: <%= @social_coupon.end_timestamp %><br />
+Offer URL: <%= @social_coupon.offer_url %><br />
+Deal Terms: <%= @social_coupon.message_terms %><br />
+City: <%= @social_coupon.city.city_name %>, <%= @social_coupon.city.state_code %> (#<%= @social_coupon.city_id %>)<br />
+Deal Start Date: <%= @social_coupon.deal_start_timestamp %><br />
+Deal End Date: <%= @social_coupon.deal_end_timestamp %><br />
+Purchase Price: <%= number_to_currency(@social_coupon.purchase_price) %><br />
+Retail Value: <%= number_to_currency(@social_coupon.retail_value) %><br />
+Max Qty: <%= @social_coupon.max_quantity_per_person %><br />
+Min Qty: <%= @social_coupon.min_quantity_per_person %><br />
+Max Qty to Sell: <%= @social_coupon.max_quantity_provided %><br />
+
+<% @social_coupon.images.each {|img| %>
+    <%= image_tag img.image.url(:medium) %><br />
+<% } %>
+
+<iframe border="0" src="/social_coupons/<%= @social_coupon.id.to_s%>/check_status" style="float:left;" ></iframe>
+<div style="clear: both;"></div>
+<%= link_to 'Edit', edit_social_coupon_path(@social_coupon) %> |
+<%= link_to 'Back', social_coupons_path %><br /><br />
+<%= link_to 'Constant Contact Email Preview', "/social_coupons/#{@social_coupon.id}/email_template/constant_contact", :target => '_blank' %> |
+<%= link_to 'Email Template', "/social_coupons/#{@social_coupon.id}/email_template/constant_contact.txt", :target => '_blank' %><br /><br />
+<%= link_to 'User Purchases', user_purchases_path(:message_id => @social_coupon.id) %><br /><br />
+<%= link_to 'Coupons Sold', coupons_path(:message_id => @social_coupon.id) %><br /><br />
+<%= link_to 'Campaign Overview', campaign_overview_social_coupon_path %> |
+<%= link_to '(as csv)', campaign_overview_social_coupon_path(:format => 'csv') %><br />
+<%= link_to 'Campaign Details', campaign_details_social_coupon_path %> |
+<%= link_to '(as csv)', campaign_details_social_coupon_path(:format => 'csv') %>

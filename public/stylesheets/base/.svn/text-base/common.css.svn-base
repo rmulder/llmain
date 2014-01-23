@@ -1,0 +1,94 @@
+/**
+ * Standard Alikelist CSS.
+ *
+ * This file contains all common styles which are shared over Alikelist domains.
+ *
+ * NOTE: This is an effort to standardize stylesheets. Work on progress.
+ *
+ * DEV-NOTES:
+ *	- Use short, precise names (i.e: .bt-yes, not button-yes).
+ *	- Use dash to separate words (-), not underscore (_)
+ *	- Follow prefix:
+ *		+ .bt- for button styles.
+ *		+ .panel- for panel styles.
+ *		+ .popup- for popup styles.
+ *	- Use for new components first, then migrate old components later.
+ */
+
+/**
+ * Helpful styles.
+ */
+.clear {
+	clear: both;
+}
+
+.hidden {
+	display: none;
+}
+
+.screen-mask {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	left: 0;
+	position: fixed;
+	top: 0;
+	z-index: 9998;
+}
+
+/**
+ * Popups and Panels container, wrapper... styles.
+ */
+.error-message {
+	display: none;
+	color: red;
+	background-color: #FFFFCC;
+	border: 1px solid #FFD940;
+	text-align: center;
+	padding: 4px;
+	margin-bottom: 12px;
+}
+
+.popup-separator {
+	color: #000;
+	font-weight: bold;
+}
+
+.small-separator {
+ 	height: 5px;
+ 	display: block;
+ }
+
+.dull {
+	color: #666;
+}
+
+.text-right {
+	text-align: right;
+}
+
+/**
+ * Button bar, buttons. Buttons should be wrapped inside a buttons bar.
+ */
+.buttons-bar {
+	height: 25px;
+	margin-top: 10px;
+	position: relative;
+}
+
+.buttons-bar .ajax-indicator {
+	background: transparent url(/images/beta2/loaders/loading_gif_16_blue.gif) no-repeat scroll center center;
+	height: 16px;
+	width: 16px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	display: none;
+}
+
+.buttons-bar .bt-round,
+.buttons-bar .bt-plain {
+	margin-right: 10px;
+}

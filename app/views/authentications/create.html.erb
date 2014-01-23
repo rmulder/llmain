@@ -1,0 +1,14 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<script type="text/javascript">
+var json_data = '<%=raw @json_data %>';
+if (window.opener) {
+	window.opener.AL.widgets.SubWindow.callback("facebook",json_data);
+	window.close();
+} else {
+	document.write(json_data);
+}
+</script>
